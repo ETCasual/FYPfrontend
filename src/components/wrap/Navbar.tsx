@@ -70,24 +70,31 @@ const Navbar = () => {
 	return (
 		<div className="navbar">
 			<div className="navbar-links">
-				<div className="navbar-links_logo">
+				<button
+					className="navbar-links_logo"
+					onClick={() => router.push('/')}
+				>
 					<img src={'/assets/logo.png'} alt="logo" />
-					<h1 onClick={() => router.push('/')}>FYP Marketplace</h1>
-				</div>
+					<h1>FYP Marketplace</h1>
+				</button>
 				<div className="navbar-links_container">
-					<input
-						type="text"
-						placeholder="Search Item Here"
-						autoFocus={true}
-					/>
 					{user && (
-						<p
-							onClick={() => {
-								handleLogout(auth)
-							}}
-						>
-							Logout
-						</p>
+						<>
+							<p
+								onClick={() => {
+									router.push(`/profile/${user.id}`)
+								}}
+							>
+								My Profile
+							</p>
+							<p
+								onClick={() => {
+									handleLogout(auth)
+								}}
+							>
+								Logout
+							</p>
+						</>
 					)}
 				</div>
 			</div>

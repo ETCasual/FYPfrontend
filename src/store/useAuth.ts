@@ -1,7 +1,7 @@
 import create, { StateCreator } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-type AuthUser = {
+export type AuthUser = {
 	displayname: string
 	profilePic: string
 	id: string
